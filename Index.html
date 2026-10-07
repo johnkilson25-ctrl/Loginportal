@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Login Portal</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+body{min-height:100vh;display:flex;justify-content:center;align-items:center;background:linear-gradient(135deg,#4facfe,#6a5acd)}
+.login-box{width:350px;padding:35px;background:white;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,.2);text-align:center}
+h1{color:#333;margin-bottom:10px}.login-box p{color:#777;margin-bottom:25px}
+.input-box{text-align:left;margin-bottom:18px}.input-box label{display:block;margin-bottom:7px;color:#333;font-weight:bold}
+.input-box input{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;outline:none}
+.input-box input:focus{border-color:#4facfe}
+button{width:100%;padding:12px;border:0;border-radius:8px;background:#4facfe;color:white;font-size:16px;cursor:pointer}
+button:hover{background:#328de0}.forgot{display:block;margin-top:18px;color:#4facfe;text-decoration:none}
+#message{margin-top:15px;font-weight:bold}
+</style>
+</head>
+<body>
+<div class="login-box">
+<h1>Student Portal</h1>
+<p>Login to your student account</p>
+<form onsubmit="login(event)">
+<div class="input-box"><label for="studentId">Student ID</label>
+<input type="text" id="studentId" placeholder="Enter Student ID" required></div>
+<div class="input-box"><label for="password">Password</label>
+<input type="password" id="password" placeholder="Enter Password" required></div>
+<button type="submit">Login</button>
+<a href="#" class="forgot">Forgot Password?</a>
+<div id="message"></div>
+</form>
+</div>
+<script>
+function login(event){
+event.preventDefault();
+const studentId=document.getElementById("studentId").value;
+const password=document.getElementById("password").value;
+const message=document.getElementById("message");
+if(studentId==="STU001" && password==="12345"){
+message.style.color="green"; message.innerHTML="Login successful!";
+}else{
+message.style.color="red"; message.innerHTML="Invalid Student ID or Password.";
+}}
+</script>
+</body>
+</html>
